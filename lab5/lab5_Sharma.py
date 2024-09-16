@@ -80,3 +80,31 @@ print(f"random integer {random.randint(-10,10)}")
 
 print("\n---------- Example 8: random numbers between 1 to 6 ----------\n ")
 print(f"dice number = {rolldice()}")
+
+print("\n ---------- Excercise ---------- ")
+
+# Function to generate a random integer
+def random_integer(min_num, max_num):
+    return random.randint(min_num, max_num)
+
+# Generate a random number between 1 and 10
+random_num = random_integer(1, 10)
+
+print(f"Random number: {random_num}")
+
+#guess number is constant
+guess_num = 5
+
+# Function to compare the random number with the guess number
+def compare_with_guess(random_num):
+    if random_num < guess_num:
+        print("The number is smaller than the guess number")
+    elif random_num > guess_num:
+        print("The number is bigger than the guess number")
+    else:
+        print("You got it!")
+
+# Pass the generated random number to the function
+compare_with_guess(random_num)
+
+
