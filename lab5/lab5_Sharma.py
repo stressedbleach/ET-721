@@ -36,6 +36,11 @@ def isdivisible(n1, n2):
 def circumference(radius=0):
     return 2*math.pi*radius
 
+#example 8: function that returns a random number between 1 to 6
+def rolldice():
+    return random.randint(1,6)
+
+
 
 #call a function that doesnt return nor pass a value
 print("\n---------- Example 1 ----------\n ")
@@ -71,3 +76,7 @@ print("\n---------- Example 7: random numbers ----------\n ")
 print(f"random number {random.random()}")
 print(f"random uniform {random.uniform(-5,5)}")
 print(f"random integer {random.randint(-10,10)}")
+
+
+print("\n---------- Example 8: random numbers between 1 to 6 ----------\n ")
+print(f"dice number = {rolldice()}")
