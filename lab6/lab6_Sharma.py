@@ -111,7 +111,7 @@ class BankAccount:
             print("Withdrawal amount must be positive.")
 
 # Creating an instance of the BankAccount class
-useraccount = BankAccount("123456789", "Student's name")
+useraccount = BankAccount("123456789", "Simridhi Sharma")
 
 # Demonstrating deposits and withdrawals
 useraccount.withdraw(700)  # Should indicate insufficient balance
