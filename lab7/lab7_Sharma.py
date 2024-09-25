@@ -71,3 +71,44 @@ newusername = "Tony Stark"
 city = "NYC"
 age = 38
 adduser(newusername, city, age, "newusers.txt")
+
+
+
+"""Activity description: create a function, 
+named email_read(), that reads a txt file and returns the number of users that have @gmail, @yahoo, and @hotmail email address. 
+The function should have try-exception statement. 
+You can test the function using the file user_email.txt file. 
+Create a new file as "reportemail.txt
+"""
+
+def email_read():
+    try:
+        with open("user_email.txt", "r") as file:
+            content = file.readlines()
+
+        gmail_count = 0
+        yahoo_count = 0
+        hotmail_count = 0
+        
+        
+        for email in content:
+            if "@gmail.com" in email:
+                gmail_count += 1
+            elif "@yahoo.com" in email:
+                yahoo_count += 1
+            elif "@hotmail.com" in email:
+                hotmail_count += 1
+        
+        with open("reportemail.txt", "w") as report_file:
+            report_file.write(f"Gmail users: {gmail_count}\n")
+            report_file.write(f"Yahoo users: {yahoo_count}\n")
+            report_file.write(f"Hotmail users: {hotmail_count}\n")
+        
+        print("Report has been generated successfully.")
+    
+    except FileNotFoundError:
+        print("Error: The file user_email.txt was not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+email_read()
