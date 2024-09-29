@@ -1,6 +1,6 @@
 """
 Example 3: Verify if the email, full name, and salary fields are correctly formatted
-Samuel Martinez
+simridhi sharma
 """
 
 class Employee:
