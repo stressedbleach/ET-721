@@ -1,4 +1,5 @@
 # Connect 4 Game
+#simridhi sharma 10/14
 
 class Connect4:
   def __init__(self):
