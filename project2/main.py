@@ -84,27 +84,36 @@ class Connect4:
     return False
 
   def play_game(self):
-    game_over = False
-    while not game_over:
-      self.print_board()
-      print(f"Player {self.current_player}'s turn.")
+      game_over = False
+      while not game_over:
+          self.print_board()
+          print(f"Player {self.current_player}'s turn.")
 
-      try:
-        column = int(input("Enter the column number (1-7): "))
-      except ValueError:
-        print("Invalid input. Please enter a valid column number.")
-        continue
+          try:
+              column = int(input("Enter the column number (1-7): "))
+          except ValueError:
+              print("Invalid input. Please enter a valid column number.")
+              continue
 
-      if not self.drop_chip(column):
-        print("Column is full or out of range. Try again.")
-        continue
+          if not self.drop_chip(column):
+              print("Column is full or out of range. Try again.")
+              continue
 
-      if self.check_win(self.current_player):
-        self.print_board()
-        print(f"Player {self.current_player} wins!")
-        game_over = True
+          if self.check_win(self.current_player):
+              self.print_board()
+              print(f"Player {self.current_player} wins!")
+              game_over = True
 
-      self.switch_player()
+          self.switch_player()
+
+          if game_over or all(self.board[0][col] != ' ' for col in range(7)):  # Check for tie
+              self.print_board()
+              print("Game over! Do you want to reset? (y/n)")
+              if input().lower() == 'y':
+                  self.__init__()  # Reset the game
+                  game_over = False
+              else:
+                  game_over = True
 
 if __name__ == "__main__":
   game = Connect4()
